@@ -35,10 +35,14 @@ jobs:
         # Destination path
         path: ./generate
 
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v2.1.1
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
       with:
-        # Artifact name
+        name: generate
+        path: generate
+  
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v3.1.2
+      with:
         name: listener
-        # Destination path
-        path: ./listener
+        path: listener
