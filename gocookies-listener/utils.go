@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net"
+	"regexp"
+	"time"
 )
 
 func recoverFromPanic() {
@@ -23,4 +25,17 @@ func checkPortInUse(port int) bool {
 		return true
 	}
 	return false
+}
+
+func extractHost(str string) (string, error) {
+	re := regexp.MustCompile(`^([a-zA-Z0-9.\[\]:]+):\d+$`)
+	match := re.FindStringSubmatch(str)
+	if len(match) < 2 {
+		return "", fmt.Errorf("invalid input string")
+	}
+	return match[1], nil
+}
+
+func getCurrentTime() string {
+	return time.Now().Format("2006-01-02T15:04:05Z07:00")
 }

@@ -51,7 +51,15 @@ func handleConnection(conn net.Conn, c *redis.Client) {
 	}
 
 	// store in redis
-	err = c.Set(fmt.Sprintf("%v", conn.RemoteAddr()), dataStr)
+	// name is host + date and time
+	host, err := extractHost(conn.RemoteAddr().String())
+	if err != nil {
+		log.Fatalf("[*] Error extracting host from connection: %v", err)
+	}
+
+	name := fmt.Sprintf("%v-%v", host, getCurrentTime())
+
+	err = c.Set(fmt.Sprintf("%v", name), dataStr)
 	if err != nil {
 		log.Fatalf("[*] Error setting cookie in redis: %v", err)
 	}
