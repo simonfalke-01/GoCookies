@@ -36,6 +36,9 @@ For macOS:
 curl https://github.com/simonfalke-01/gocookies/releases/latest/download/generate-macos -o generate && curl https://github.com/simonfalke-01/gocookies/releases/latest/download/listener-macos -o listener && chmod +x generate listener
 ```
 
+For Windows:  
+Idk if it even works.
+
 Alternatively, you can download the binaries manually from the [releases](https://github.com/simonfalke-01/gocookies/releases/latest/) page.
 
 ## Generating a Payload
