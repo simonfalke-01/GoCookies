@@ -21,6 +21,8 @@ func main() {
 		if err != nil {
 			log.Fatalf("[*] Error creating redis container: %v", err)
 		}
+
+		log.Printf("[*] Redis container running on port %v", redisPort)
 	}
 
 	if checkPortInUse(listenerPort) {
@@ -34,6 +36,8 @@ func main() {
 	}
 
 	c := redis.NewClient(context.Background(), "localhost", redisPort, "", 0)
+
+	log.Printf("[*] Listener running on port %v", listenerPort)
 
 	startListener(listener, c)
 }

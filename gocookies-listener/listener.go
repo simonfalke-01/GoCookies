@@ -40,6 +40,8 @@ func handleConnection(conn net.Conn, c *redis.Client) {
 		}
 	}(conn)
 
+	log.Printf("[*] Received connection from %v", conn.RemoteAddr())
+
 	data := readAll(conn)
 	dataStr := data
 	// unmarshal json bytes to cookies
@@ -47,8 +49,6 @@ func handleConnection(conn net.Conn, c *redis.Client) {
 	if err != nil {
 		log.Fatalf("[*] Error unmarshalling json bytes: %v", err)
 	}
-
-	fmt.Println(string(dataStr))
 
 	// store in redis
 	err = c.Set(fmt.Sprintf("%v", conn.RemoteAddr()), dataStr)
