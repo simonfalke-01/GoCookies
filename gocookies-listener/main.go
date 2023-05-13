@@ -23,8 +23,8 @@ func main() {
 		}
 	}
 
-	if checkPortInUse(redisPort) {
-		log.Fatalf("[*] Listener port %v is already in use", redisPort)
+	if checkPortInUse(listenerPort) {
+		log.Fatalf("[*] Listener port %v is already in use", listenerPort)
 	}
 
 	listener, err := setupListener(listenerPort)
