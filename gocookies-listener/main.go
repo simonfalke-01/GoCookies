@@ -23,6 +23,12 @@ func main() {
 		}
 
 		log.Printf("[*] Redis container running on port %v", redisPort)
+	} else {
+		redisDbUp := redis.TestRedisConnection("localhost", redisPort)
+
+		if !redisDbUp {
+			log.Fatalf("[*] Redis db not running on port %v", redisPort)
+		}
 	}
 
 	if checkPortInUse(listenerPort) {

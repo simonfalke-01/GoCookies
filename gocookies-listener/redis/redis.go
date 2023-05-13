@@ -29,3 +29,15 @@ func NewClient(ctx context.Context, addr string, port int, password string, db i
 		ctx: ctx,
 	}
 }
+
+func TestRedisConnection(host string, port int) bool {
+	rdb := redis.NewClient(&redis.Options{
+		Addr: fmt.Sprintf("%s:%d", host, port),
+	})
+	ctx := context.Background()
+	_, err := rdb.Ping(ctx).Result()
+	if err != nil {
+		return false
+	}
+	return true
+}
