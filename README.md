@@ -59,6 +59,12 @@ Once the payload is generated, you can send it to the victim.
 
 ## Setting up the Listener
 
+Before running the listener, ensure that the docker daemon is running. Then, pull the `redis` image:
+
+```
+docker image pull redis:alpine3.18
+```
+
 To set up the listener, use the `gocookies-listener` component. This component requires the following arguments:
 
 - `-r` - The port on which Redis will be running.
