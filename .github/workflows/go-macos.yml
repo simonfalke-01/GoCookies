@@ -22,10 +22,10 @@ jobs:
         go-version: 1.19
 
     - name: Build generate
-      run: go build -v ./gocookies-generate -o generate
+      run: go build -v ./gocookies-generate/. -o generate
     
     - name: Build listener
-      run: go build -v ./gocookies-listener -o listener
+      run: go build -v ./gocookies-listener/. -o listener
   
     - name: Download a Build Artifact
       uses: actions/download-artifact@v2.1.1
