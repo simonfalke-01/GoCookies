@@ -4,37 +4,27 @@ import (
 	"context"
 	"github.com/simonfalke-01/gocookies/listener/redis"
 	"log"
-	"os"
-	"strconv"
 )
 
 func main() {
 	// gets argv[1] from cli as the port to run the redis container on
 	// gets argv[2] from cli as the port to run the listener on
-	if len(os.Args) != 3 {
-		log.Fatalf("[*] Usage: %s <redis port> <listener port>", os.Args[0])
-	}
-
-	redisPort := func() int {
-		port, err := strconv.Atoi(os.Args[1])
-		if err != nil {
-			log.Fatalf("[*] Error converting redis port to int: %v", err)
-		}
-		return port
-	}()
-	listenerPort := func() int {
-		port, err := strconv.Atoi(os.Args[2])
-		if err != nil {
-			log.Fatalf("[*] Error converting listener port to int: %v", err)
-		}
-		return port
-	}()
+	redisPort, listenerPort, useExisting := getFlags()
 
 	// start redis container
-	_, err := redis.CreateRedisContainer(redisPort)
+	if !useExisting {
+		if checkPortInUse(redisPort) {
+			log.Fatalf("[*] Redis port %v is already in use", redisPort)
+		}
 
-	if err != nil {
-		log.Fatalf("[*] Error creating redis container: %v", err)
+		_, err := redis.CreateRedisContainer(redisPort)
+		if err != nil {
+			log.Fatalf("[*] Error creating redis container: %v", err)
+		}
+	}
+
+	if checkPortInUse(redisPort) {
+		log.Fatalf("[*] Listener port %v is already in use", redisPort)
 	}
 
 	listener, err := setupListener(listenerPort)
