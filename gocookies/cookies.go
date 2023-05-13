@@ -1,8 +1,8 @@
 package main
 
 import (
-	_ "github.com/simonfalke-01/cbr-cli/kooky/browser/all"
 	"github.com/simonfalke-01/gocookies/kooky"
+	_ "github.com/simonfalke-01/gocookies/kooky/browser/all"
 	"time"
 )
 
@@ -24,7 +24,7 @@ type jsonCookie struct {
 }
 
 func getAllCookies() *[]jsonCookie {
-	cookie := kooky.ReadCookies(kooky.Valid)
+	cookie := kooky.ReadCookies()
 
 	var jsonCookies []jsonCookie
 	for _, c := range cookie {

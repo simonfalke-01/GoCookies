@@ -47,11 +47,11 @@ func RegisterFinder(browser string, finder CookieStoreFinder) {
 //
 // Register cookie store finders for all browsers like this:
 //
-//	import _ "github.com/simonfalke-01/cbr-cli/kooky/browser/all"
+//	import _ "github.com/simonfalke-01/gocookies/kooky/browser/all"
 //
 // Or only a specific browser:
 //
-//	import _ "github.com/simonfalke-01/cbr-cli/kooky/browser/chrome"
+//	import _ "github.com/simonfalke-01/gocookies/kooky/browser/chrome"
 func FindAllCookieStores() []CookieStore {
 	var ret []CookieStore
 
@@ -93,11 +93,11 @@ func FindAllCookieStores() []CookieStore {
 //
 // Register cookie store finders for all browsers like this:
 //
-//	import _ "github.com/simonfalke-01/cbr-cli/kooky/browser/all"
+//	import _ "github.com/simonfalke-01/gocookies/kooky/browser/all"
 //
 // Or only a specific browser:
 //
-//	import _ "github.com/simonfalke-01/cbr-cli/kooky/browser/chrome"
+//	import _ "github.com/simonfalke-01/gocookies/kooky/browser/chrome"
 func ReadCookies(filters ...Filter) []*Cookie {
 	var ret []*Cookie
 

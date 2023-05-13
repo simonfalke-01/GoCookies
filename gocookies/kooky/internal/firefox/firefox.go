@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/utils"
+	"github.com/simonfalke-01/gocookies/kooky"
+	"github.com/simonfalke-01/gocookies/kooky/internal/utils"
 
 	"github.com/bobesa/go-domain-util/domainutil"
 )

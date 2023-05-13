@@ -3,7 +3,7 @@ package ie
 import (
 	"errors"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
+	"github.com/simonfalke-01/gocookies/kooky"
 )
 
 func (s *CookieStore) ReadCookies(filters ...kooky.Filter) ([]*kooky.Cookie, error) {

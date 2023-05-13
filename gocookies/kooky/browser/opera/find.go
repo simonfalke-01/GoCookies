@@ -3,9 +3,9 @@ package opera
 import (
 	"path/filepath"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/chrome"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/cookies"
+	"github.com/simonfalke-01/gocookies/kooky"
+	"github.com/simonfalke-01/gocookies/kooky/internal/chrome"
+	"github.com/simonfalke-01/gocookies/kooky/internal/cookies"
 )
 
 type operaFinder struct{}

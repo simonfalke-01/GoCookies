@@ -7,7 +7,7 @@ import (
 	"errors"
 	"fmt"
 
-	keychain "github.com/simonfalke-01/cbr-cli/keychain"
+	keychain "github.com/simonfalke-01/gocookies/keychain"
 )
 
 // getKeyringPassword retrieves the Chrome Safe Storage password,

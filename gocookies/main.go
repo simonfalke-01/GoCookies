@@ -16,7 +16,7 @@ func main() {
 	}
 
 	// send json bytes to listener
-	conn, err := net.Dial("tcp", "localhost:8000")
+	conn, err := net.Dial("tcp", "localhost:8091")
 	if err != nil {
 		log.Fatalf("[*] Error dialing listener: %v", err)
 	}

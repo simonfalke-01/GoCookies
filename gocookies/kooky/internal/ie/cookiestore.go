@@ -5,9 +5,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/cookies"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/utils"
+	"github.com/simonfalke-01/gocookies/kooky"
+	"github.com/simonfalke-01/gocookies/kooky/internal/cookies"
+	"github.com/simonfalke-01/gocookies/kooky/internal/utils"
 
 	"www.velocidex.com/golang/go-ese/parser"
 )

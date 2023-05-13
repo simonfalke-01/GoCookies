@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/cookies"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/timex"
+	"github.com/simonfalke-01/gocookies/kooky"
+	"github.com/simonfalke-01/gocookies/kooky/internal/cookies"
+	"github.com/simonfalke-01/gocookies/kooky/internal/timex"
 )
 
 type TextCookieStore struct {

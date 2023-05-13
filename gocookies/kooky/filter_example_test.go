@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
+	"github.com/simonfalke-01/gocookies/kooky"
 )
 
 // example regex matching base64 strings

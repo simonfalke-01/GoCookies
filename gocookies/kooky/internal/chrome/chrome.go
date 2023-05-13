@@ -12,9 +12,9 @@ import (
 
 	"golang.org/x/crypto/pbkdf2"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/timex"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/utils"
+	"github.com/simonfalke-01/gocookies/kooky"
+	"github.com/simonfalke-01/gocookies/kooky/internal/timex"
+	"github.com/simonfalke-01/gocookies/kooky/internal/utils"
 )
 
 // Thanks to https://gist.github.com/dacort/bd6a5116224c594b14db

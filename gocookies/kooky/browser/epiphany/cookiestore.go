@@ -4,7 +4,7 @@ import (
 	"errors"
 
 	"github.com/go-sqlite/sqlite3"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/cookies"
+	"github.com/simonfalke-01/gocookies/kooky/internal/cookies"
 )
 
 type epiphanyCookieStore struct {

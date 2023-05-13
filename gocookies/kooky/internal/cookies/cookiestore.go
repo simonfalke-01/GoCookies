@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
+	"github.com/simonfalke-01/gocookies/kooky"
 )
 
 // kooky.CookieStore without http.CookieJar and SubJar()

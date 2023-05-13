@@ -1,6 +1,6 @@
 # kooky
 
-[![PkgGoDev](https://pkg.go.dev/badge/github.com/simonfalke-01/cbr-cli/kooky)](https://pkg.go.dev/github.com/simonfalke-01/cbr-cli/kooky)
+[![PkgGoDev](https://pkg.go.dev/badge/github.com/simonfalke-01/gocookies/kooky)](https://pkg.go.dev/github.com/simonfalke-01/gocookies/kooky)
 [![Go Report Card](https://goreportcard.com/badge/zellyn/kooky)](https://goreportcard.com/report/zellyn/kooky)
 ![Lines of code](https://img.shields.io/tokei/lines/github/zellyn/kooky)
 [![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
@@ -49,8 +49,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	_ "github.com/simonfalke-01/cbr-cli/kooky/browser/all" // register cookie store finders!
+	"github.com/simonfalke-01/gocookies/kooky"
+	_ "github.com/simonfalke-01/gocookies/kooky/browser/all" // register cookie store finders!
 )
 
 func main() {
@@ -74,7 +74,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/simonfalke-01/cbr-cli/kooky/browser/chrome"
+	"github.com/simonfalke-01/gocookies/kooky/browser/chrome"
 )
 
 func main() {
@@ -100,7 +100,7 @@ import (
 	"log"
 	"os"
 
-	"github.com/simonfalke-01/cbr-cli/kooky/browser/safari"
+	"github.com/simonfalke-01/gocookies/kooky/browser/safari"
 )
 
 func main() {

@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
+	"github.com/simonfalke-01/gocookies/kooky"
 )
 
 var cookieFile = `cookies.txt`

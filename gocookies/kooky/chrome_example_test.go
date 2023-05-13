@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/simonfalke-01/cbr-cli/kooky/browser/chrome"
+	"github.com/simonfalke-01/gocookies/kooky/browser/chrome"
 )
 
 // on macOS:

@@ -8,7 +8,7 @@ import (
 	"math/bits"
 	"time"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
+	"github.com/simonfalke-01/gocookies/kooky"
 )
 
 type fileHeader struct {

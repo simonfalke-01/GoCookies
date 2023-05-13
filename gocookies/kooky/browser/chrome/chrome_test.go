@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/chrome"
-	"github.com/simonfalke-01/cbr-cli/kooky/internal/testutils"
+	"github.com/simonfalke-01/gocookies/kooky"
+	"github.com/simonfalke-01/gocookies/kooky/internal/chrome"
+	"github.com/simonfalke-01/gocookies/kooky/internal/testutils"
 )
 
 // d18f6247db68045dfbab126d814baf2cf1512141391

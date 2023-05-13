@@ -1,8 +1,8 @@
 package kooky_test
 
 import (
-	"github.com/simonfalke-01/cbr-cli/kooky"
-	_ "github.com/simonfalke-01/cbr-cli/kooky/browser/all" // register cookiestore finders
+	"github.com/simonfalke-01/gocookies/kooky"
+	_ "github.com/simonfalke-01/gocookies/kooky/browser/all" // register cookiestore finders
 )
 
 var cookieName = `NID`
